@@ -15,8 +15,10 @@ class BookingAdmin(ModelAdminTotals):
     list_filter = (
         ("start_date", DateRangeQuickSelectListFilterBuilder()),
         "room"
-        )
-    
+    )
+
+    autocomplete_fields = ["guests"]
+
     def guests_list(self, obj):
         return ", ".join(str(guest) for guest in obj.guests.all())
     guests_list.short_description = "Guests"
