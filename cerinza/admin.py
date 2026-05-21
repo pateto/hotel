@@ -26,5 +26,13 @@ class BookingAdmin(ModelAdminTotals):
     price_.admin_order_field = 'price'
     
 
-admin.site.register(Room)
-admin.site.register(Guest)
+@admin.register(Room)
+class RoomAdmin(admin.ModelAdmin):
+    list_display = ("id", "name", "owner")
+    list_filter = ("owner",)
+
+@admin.register(Guest)
+class GuestAdmin(admin.ModelAdmin):
+    list_display = ("id", "name", "last_name", "email", "phone")
+    list_filter = ("name", "last_name")
+    search_fields = ("name", "last_name", "email", "phone")
