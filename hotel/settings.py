@@ -10,7 +10,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
-import dj_database_url
 import os
 
 from pathlib import Path
@@ -76,11 +75,15 @@ WSGI_APPLICATION = 'hotel.wsgi.application'
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get('DATABASE_URL')),
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'valledeceri_hotel',
+        'USER': 'valledeceri_pateto',
+        'PASSWORD': '3zchoAKa{TT[e0#+',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
 }
-
-DATABASES['default']['ENGINE'] = "django.db.backends.mysql"
-
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
