@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-v(^wjbz!a$=ldnk^&$*wh-w=aqzspx1btw085f@8&&$$ez&+h2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["hotelvalledecerinza.com"]
 
