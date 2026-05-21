@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cerinza',
     'rangefilter',
+    'admin_totals',    
 ]
 
 MIDDLEWARE = [
