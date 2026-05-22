@@ -125,3 +125,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATIC_ROOT = "/home/valledeceri/public_html/static"
+
+# Media files (user-uploaded content, images)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = str(BASE_DIR / 'media')
