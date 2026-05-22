@@ -1,0 +1,138 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Valle de Cerinza</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'cerinza/style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+            <div class="container-fluid">
+                <a class="navbar-brand d-flex align-items-center" href="/">
+                    <img src="/{{ logo }}" alt="Hotel Valle de Cerinza" class="logo me-2" style="width:60px;">
+                    <span class="fw-bold">Hotel Valle de Cerinza</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="habitacionesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Habitaciones
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="habitacionesDropdown">
+                                {% for room in rooms %}
+                                <li><a class="dropdown-item" href="/habitacion/{{ room.slug }}/">{{ room.name }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">Sobre el hotel</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#activities">Actividades</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="contactoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Contacto
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="contactoDropdown">
+                                <li><a class="dropdown-item" href="#contact">Formulario</a></li>
+                                <li><a class="dropdown-item" href="mailto:info@hotelvalledecerinza.com">Email</a></li>
+                                <li><a class="dropdown-item" href="tel:+571234567890">Teléfono</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/english/">English</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    <section class="hero-section">
+        <div class="hero-bg">
+            <h1>Hotel Valle de Cerinza</h1>
+            <p class="slogan">Vive la naturaleza y la cultura boyacense / Experience nature and Boyacá's culture</p>
+            <div class="hero-gallery">
+                <img src="/media/Casa/1.jpg" alt="Casa principal" class="hero-img hero-img-xl">
+                <img src="/media/Casa/2.jpg" alt="Casa principal" class="hero-img hero-img-xl">
+                <img src="/media/Casa/10.jpeg" alt="Casa principal" class="hero-img hero-img-xl">
+            </div>
+            <a href="#contact" class="cta-btn">Reserva tu estadía</a>
+            <a href="/english/" class="cta-btn cta-btn-english">English version</a>
+        </div>
+    </section>
+    <section class="about" id="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>Sobre Cerinza, Boyacá</h2>
+                <p>Cerinza es un hermoso municipio en Boyacá, rodeado de montañas, lagunas y paisajes naturales. Es ideal para el ecoturismo, senderismo, avistamiento de aves y disfrutar de la cultura boyacense. Entre sus atractivos están la Laguna del Alto, la iglesia colonial, y la calidez de su gente.</p>
+            </div>
+            <div class="about-img">
+                <img src="/media/Laguna del alto/1.jpg" alt="Laguna del Alto" />
+            </div>
+        </div>
+    </section>
+    <section class="activities" id="activities">
+        <h2>Actividades en Cerinza</h2>
+        <div class="activities-list">
+            <div class="activity-card">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Laguna del Alto">
+                <h4>Visita a la Laguna del Alto</h4>
+                <p>Un paraíso natural para caminatas, picnic y fotografía.</p>
+            </div>
+            <div class="activity-card">
+                <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Senderismo">
+                <h4>Senderismo ecológico</h4>
+                <p>Recorre los paisajes rurales y descubre la flora y fauna local.</p>
+            </div>
+            <div class="activity-card">
+                <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=400&q=80" alt="Eventos">
+                <h4>Eventos y festividades</h4>
+                <p>Disfruta de la cultura, música y gastronomía boyacense.</p>
+            </div>
+            <div class="activity-card">
+                <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Artesanías">
+                <h4>Artesanías locales</h4>
+                <p>Descubre y adquiere artesanías típicas elaboradas por los habitantes de Cerinza, reflejo de la creatividad y tradición del municipio.</p>
+            </div>
+        </div>
+    </section>
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-info">
+                <p><strong>Dirección:</strong> Calle 8 # 7 - 58, Cerinza, Boyacá</p>
+                <p><strong>Email:</strong> info@hotelvalledecerinza.com</p>
+                <p><strong>Teléfono:</strong> +57 123 456 7890</p>
+            </div>
+            <div class="footer-social">
+                <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" class="social-icon"></a>
+                <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram" class="social-icon"></a>
+                <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" class="social-icon"></a>
+            </div>
+        </div>
+        <div class="footer-legal">
+            <p>&copy; 2026 Hotel Valle de Cerinza. Inspirado en <a href="https://www.ecohoteles.co/" target="_blank">Ecohoteles</a>.</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/6a0f9b0644b4b21c36ed5aa2/1jp6fb51p';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
+</body>
+</html>
