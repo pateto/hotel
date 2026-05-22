@@ -27,7 +27,7 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="roomsDropdown">
                                 {% for room in rooms %}
-                                <li><a class="dropdown-item" href="/habitacion/{{ room.slug }}/">{{ room.name }}</a></li>
+                                <li><a class="dropdown-item" href="/english/room/{{ room.slug }}/">{{ room.name_en }}</a></li>
                                 {% endfor %}
                             </ul>
                         </li>
@@ -37,15 +37,8 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#activities">Activities</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="contactDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Contact
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="contactDropdown">
-                                <li><a class="dropdown-item" href="#contact">Form</a></li>
-                                <li><a class="dropdown-item" href="mailto:info@hotelvalledecerinza.com">Email</a></li>
-                                <li><a class="dropdown-item" href="tel:+571234567890">Phone</a></li>
-                            </ul>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/">Español</a>
@@ -57,11 +50,11 @@
     <section class="hero-section">
         <div class="hero-bg">
             <h1>Hotel Valle de Cerinza</h1>
-            <p class="slogan">Experience nature and Boyacá's culture</p>
+            <p class="slogan">Experience nature and the culture of Boyacá</p>
             <div class="hero-gallery">
-                <img src="/media/Casa/1.jpg" alt="Main house" class="hero-img hero-img-xl">
-                <img src="/media/Casa/2.jpg" alt="Main house" class="hero-img hero-img-xl">
-                <img src="/media/Casa/10.jpeg" alt="Main house" class="hero-img hero-img-xl">
+                <img src="/media/casa/1.jpg" alt="Main house" class="hero-img hero-img-xl">
+                <img src="/media/casa/2.jpg" alt="Main house" class="hero-img hero-img-xl">
+                <img src="/media/casa/10.jpeg" alt="Main house" class="hero-img hero-img-xl">
             </div>
             <a href="#contact" class="cta-btn">Book Now</a>
         </div>
@@ -70,10 +63,10 @@
         <div class="about-content">
             <div class="about-text">
                 <h2>About Cerinza, Boyacá</h2>
-                <p>Cerinza is a beautiful town in Boyacá, surrounded by mountains, lagoons, and natural landscapes. Perfect for ecotourism, hiking, birdwatching, and enjoying local culture. Main attractions include Laguna del Alto, the colonial church, and the warmth of its people.</p>
+                <p>Cerinza is a beautiful town in Boyacá, surrounded by mountains, lagoons, and natural landscapes. It is perfect for ecotourism, hiking, birdwatching, and enjoying local culture. Main attractions include Laguna del Alto, the colonial church, and the warmth of its people.</p>
             </div>
             <div class="about-img">
-                <img src="/media/Laguna del alto/1.jpg" alt="Laguna del Alto" />
+                <img src="/media/laguna_del_alto/1.jpg" alt="Laguna del Alto" />
             </div>
         </div>
     </section>
@@ -81,17 +74,17 @@
         <h2>Activities in Cerinza</h2>
         <div class="activities-list">
             <div class="activity-card">
-                <img src="/media/Laguna del alto/10.jpg" alt="Laguna del Alto">
+                <img src="/media/laguna_del_alto/10.jpg" alt="Laguna del Alto">
                 <h4>Visit Laguna del Alto</h4>
                 <p>A natural paradise for hiking, picnics, and photography.</p>
             </div>
             <div class="activity-card">
-                <img src="/media/La Meseta/10.jpg" alt="Hiking">
+                <img src="/media/la_meseta/10.jpg" alt="Hiking">
                 <h4>Ecological Hiking</h4>
                 <p>Walk through rural landscapes and discover local flora and fauna.</p>
             </div>
             <div class="activity-card">
-                <img src="/media/Salon Boyaca/10.jpg" alt="Events">
+                <img src="/media/salon_boyaca/10.jpg" alt="Events">
                 <h4>Events & Festivals</h4>
                 <p>Enjoy local culture, music, and gastronomy.</p>
             </div>
