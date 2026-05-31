@@ -31,9 +31,6 @@
                                 {% endfor %}
                             </ul>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#about">About</a>
-                        </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="spacesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Spaces
@@ -43,6 +40,9 @@
                                 <li><a class="dropdown-item" href="/english/space/{{ space.slug }}/">{{ space.name_en }}</a></li>
                                 {% endfor %}
                             </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#activities">Activities</a>
