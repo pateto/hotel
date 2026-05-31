@@ -47,6 +47,17 @@ Las tarifas se ajustan segun las siguientes variables:
 Direccion
 Calle 8 # 7 - 58, Cerinza, Boyaca
 
+Redes sociales
+
+Facebook
+https://www.facebook.com/profile.php?id=100076408506704
+
+Instagram
+https://www.instagram.com/hotelvalledecerinza/
+
+Whatsapp
++57 310 5986180
+
 # cpanel installation
 
 https://www.youtube.com/watch?v=7sqKleqrhy0
