@@ -67,7 +67,7 @@
                 <div class="carousel-inner">
                     {% for img in images %}
                     <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                        <img src="/{{ img }}" class="d-block w-100" alt="{{ room.name_en }}" style="object-fit:cover;height:360px;border-radius:14px;box-shadow:0 4px 24px rgba(29,58,42,0.18);">
+                        <img src="/{{ img }}" class="d-block w-100 carousel-img" alt="{{ room.name_en }}">
                     </div>
                     {% endfor %}
                 </div>
