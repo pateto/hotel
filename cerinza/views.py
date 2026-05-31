@@ -3,9 +3,11 @@ def room_detail_en(request, room_name):
 	if not room:
 		return render(request, 'cerinza/404.html', status=404)
 	images = get_room_images(room['media_folder'])
+	rooms = [{**r, 'images': []} for r in ROOMS]
 	context = {
 		'room': room,
 		'images': images,
+		'rooms': rooms,
 		'logo': os.path.join('media', 'logo.png'),
 	}
 	return render(request, 'cerinza/room_detail_en.html', context)
@@ -115,9 +117,11 @@ def room_detail(request, room_name):
 	if not room:
 		return render(request, 'cerinza/404.html', status=404)
 	images = get_room_images(room['media_folder'])
+	rooms = [{**r, 'images': []} for r in ROOMS]
 	context = {
 		'room': room,
 		'images': images,
+		'rooms': rooms,
 		'logo': os.path.join('media', 'logo.png'),
 	}
 	return render(request, 'cerinza/room_detail.html', context)
