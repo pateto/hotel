@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Valle de Cerinza</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;400&family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'cerinza/style.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
@@ -72,32 +72,47 @@
         </div>
     </section>
     <section class="activities" id="activities">
-        <h2>Actividades en Cerinza</h2>
-        <div class="activities-list">
-            <div class="activity-card">
-                <img src="/media/cerinza/1.png" alt="Cerinza paisaje 1">
-                <h4>Paisaje de Cerinza</h4>
-                <p>Disfruta de los hermosos paisajes naturales de Cerinza, ideales para caminatas y fotografía.</p>
-            </div>
-            <div class="activity-card">
-                <img src="/media/cerinza/2.png" alt="Cerinza paisaje 2">
-                <h4>Senderismo y naturaleza</h4>
-                <p>Explora rutas ecológicas y vive la biodiversidad de la región.</p>
-            </div>
-            <div class="activity-card">
-                <img src="/media/cerinza/4.png" alt="Cultura Cerinza">
-                <h4>Cultura y tradiciones</h4>
-                <p>Participa en festividades y conoce la cultura boyacense.</p>
-            </div>
-            <div class="activity-card">
-                <img src="/media/cerinza/5.png" alt="Artesanías Cerinza">
-                <h4>Artesanías locales</h4>
-                <p>Descubre artesanías típicas elaboradas por los habitantes de Cerinza.</p>
+        <div class="activities-inner">
+            <h2>Actividades en Cerinza</h2>
+            <p class="activities-subtitle">Descubre todo lo que este hermoso municipio boyacense tiene para ofrecer</p>
+            <div class="activities-list">
+                <div class="activity-card">
+                    <img src="/media/cerinza/1.png" alt="Cerinza paisaje">
+                    <div class="activity-card-body">
+                        <h4>Paisaje de Cerinza</h4>
+                        <p>Disfruta de los hermosos paisajes naturales, ideales para caminatas y fotografía.</p>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <img src="/media/cerinza/2.png" alt="Senderismo">
+                    <div class="activity-card-body">
+                        <h4>Senderismo y naturaleza</h4>
+                        <p>Explora rutas ecológicas y vive la biodiversidad de la región andina.</p>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <img src="/media/cerinza/4.png" alt="Cultura">
+                    <div class="activity-card-body">
+                        <h4>Cultura y tradiciones</h4>
+                        <p>Participa en festividades y conoce la auténtica cultura boyacense.</p>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <img src="/media/cerinza/5.png" alt="Artesanías">
+                    <div class="activity-card-body">
+                        <h4>Artesanías locales</h4>
+                        <p>Descubre artesanías típicas elaboradas por los habitantes de Cerinza.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
     <footer id="contact">
         <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Hotel Valle de Cerinza</h3>
+                <p>Cerinza, Boyacá — Colombia</p>
+            </div>
             <div class="footer-info">
                 <p><strong>Dirección:</strong> Calle 8 # 7 - 58, Cerinza, Boyacá</p>
                 <p><strong>Email:</strong> info@hotelvalledecerinza.com</p>
@@ -109,7 +124,7 @@
             </div>
         </div>
         <div class="footer-legal">
-            <p>&copy; 2026 Hotel Valle de Cerinza. Inspirado en <a href="https://www.ecohoteles.co/" target="_blank">Ecohoteles</a>.</p>
+            <p>&copy; 2026 Hotel Valle de Cerinza. Todos los derechos reservados.</p>
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

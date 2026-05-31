@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ room.name }} - Hotel Valle de Cerinza</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;400&family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'cerinza/style.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
@@ -47,13 +47,17 @@
             </div>
         </div>
     </nav>
-    <section class="room-gallery d-flex flex-wrap justify-content-center align-items-start" style="gap:2em;padding:2em 2.5em;">
-        <div class="gallery" style="flex:1 1 33%;max-width:33vw;min-width:320px;">
+    <section class="room-detail-hero">
+        <h1>{{ room.name }}</h1>
+        <p class="slogan">{{ room.descripcion }}</p>
+    </section>
+    <div class="room-gallery-section">
+        <div class="room-carousel-wrap">
             <div id="roomCarousel" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     {% for img in images %}
                     <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                        <img src="/{{ img }}" class="d-block w-100" alt="{{ room.name }}" style="object-fit:cover;height:340px;border-radius:16px;box-shadow:0 2px 16px rgba(60,120,60,0.13);">
+                        <img src="/{{ img }}" class="d-block w-100" alt="{{ room.name }}" style="object-fit:cover;height:360px;border-radius:14px;box-shadow:0 4px 24px rgba(29,58,42,0.18);">
                     </div>
                     {% endfor %}
                 </div>
@@ -69,19 +73,36 @@
                 {% endif %}
             </div>
         </div>
-        <div class="room-info" style="flex:2 1 60%;min-width:320px;">
-            <h2>Capacidad: {{ room.capacidad }}</h2>
+        <div class="room-detail-info">
+            <h2>{{ room.name }}</h2>
+            <span class="room-capacity">Capacidad: {{ room.capacidad }} personas</span>
             <p>{{ room.descripcion }}</p>
             {% if room.detalle %}
-            <div class="room-detalle" style="font-size:1.18em;line-height:1.6;margin:1.2em 0 1.5em 0;color:#256029;font-weight:500;">{{ room.detalle }}</div>
+            <p class="room-detalle">{{ room.detalle }}</p>
             {% endif %}
-            <a href="/" class="back-link">&larr; Volver a habitaciones</a>
+            <a href="/" class="back-link">&larr; Volver a inicio</a>
         </div>
-    </section>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <footer>
-        <p>Dirección: Calle 8 # 7 - 58, Cerinza, Boyacá</p>
-        <p>&copy; 2026 Hotel Valle de Cerinza</p>
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Hotel Valle de Cerinza</h3>
+                <p>Cerinza, Boyacá — Colombia</p>
+            </div>
+            <div class="footer-info">
+                <p><strong>Dirección:</strong> Calle 8 # 7 - 58, Cerinza, Boyacá</p>
+                <p><strong>Email:</strong> info@hotelvalledecerinza.com</p>
+                <p><strong>Teléfono:</strong> +57 123 456 7890</p>
+            </div>
+            <div class="footer-social">
+                <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" class="social-icon"></a>
+                <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram" class="social-icon"></a>
+            </div>
+        </div>
+        <div class="footer-legal">
+            <p>&copy; 2026 Hotel Valle de Cerinza. Todos los derechos reservados.</p>
+        </div>
     </footer>
 </body>
 </html>
