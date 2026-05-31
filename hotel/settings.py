@@ -128,4 +128,5 @@ STATIC_ROOT = "/home/valledeceri/public_html/static"
 
 # Media files (user-uploaded content, images)
 MEDIA_URL = '/media/'
-MEDIA_ROOT = "/home/valledeceri/public_html/media"
+MEDIA_ROOT = str(BASE_DIR / 'media')
+MEDIA_PUBLIC = "/home/valledeceri/public_html/media"
