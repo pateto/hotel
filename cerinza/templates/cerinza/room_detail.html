@@ -5,25 +5,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ room.name }} - Hotel Valle de Cerinza</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;400&family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'cerinza/style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <header class="hero">
-        <a href="/">
-            <img src="/{{ logo }}" alt="Hotel Valle de Cerinza" class="logo">
-        </a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="/">
+                <img src="/{{ logo }}" alt="Hotel Valle de Cerinza" class="logo me-2" style="width:60px;">
+                <span class="fw-bold">Hotel Valle de Cerinza</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="habitacionesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Habitaciones
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="habitacionesDropdown">
+                            {% for r in rooms %}
+                            <li><a class="dropdown-item" href="/habitacion/{{ r.slug }}/">{{ r.name }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/#about">Sobre el hotel</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="espaciosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Espacios
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="espaciosDropdown">
+                            {% for s in spaces %}
+                            <li><a class="dropdown-item" href="/espacio/{{ s.slug }}/">{{ s.name }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/#activities">Actividades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/#contact">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/english/">English</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="room-detail-hero">
         <h1>{{ room.name }}</h1>
         <p class="slogan">{{ room.descripcion }}</p>
-    </header>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <section class="room-gallery d-flex flex-wrap justify-content-center align-items-start" style="gap:2em;">
-        <div class="gallery" style="flex:1 1 33%;max-width:33vw;min-width:320px;">
+    </section>
+    <div class="room-gallery-section">
+        <div class="room-carousel-wrap">
             <div id="roomCarousel" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     {% for img in images %}
                     <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                        <img src="/{{ img }}" class="d-block w-100" alt="{{ room.name }}" style="object-fit:cover;height:340px;border-radius:16px;box-shadow:0 2px 16px rgba(60,120,60,0.13);">
+                        <img src="/{{ img }}" class="d-block w-100" alt="{{ room.name }}" style="object-fit:cover;height:360px;border-radius:14px;box-shadow:0 4px 24px rgba(29,58,42,0.18);">
                     </div>
                     {% endfor %}
                 </div>
@@ -39,19 +83,37 @@
                 {% endif %}
             </div>
         </div>
-        <div class="room-info" style="flex:2 1 60%;min-width:320px;">
-            <h2>Capacidad: {{ room.capacidad }}</h2>
+        <div class="room-detail-info">
+            <h2>{{ room.name }}</h2>
+            <span class="room-capacity">Capacidad: {{ room.capacidad }} personas</span>
             <p>{{ room.descripcion }}</p>
             {% if room.detalle %}
-            <div class="room-detalle" style="font-size:1.18em;line-height:1.6;margin:1.2em 0 1.5em 0;color:#256029;font-weight:500;">{{ room.detalle }}</div>
+            <p class="room-detalle">{{ room.detalle }}</p>
             {% endif %}
-            <a href="/" class="back-link">&larr; Volver a habitaciones</a>
+            <a href="/" class="back-link">&larr; Volver a inicio</a>
         </div>
-    </section>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <footer>
-        <p>Dirección: Calle 8 # 7 - 58, Cerinza, Boyacá</p>
-        <p>&copy; 2026 Hotel Valle de Cerinza</p>
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Hotel Valle de Cerinza</h3>
+                <p>Cerinza, Boyacá — Colombia</p>
+            </div>
+            <div class="footer-info">
+                <p><strong>Dirección:</strong> Calle 8 # 7 - 58, Cerinza, Boyacá</p>
+                <p><strong>Email:</strong> info@hotelvalledecerinza.com</p>
+                <p><strong>Teléfono:</strong> +57 123 456 7890</p>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.facebook.com/profile.php?id=100076408506704" target="_blank" rel="noopener noreferrer"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" class="social-icon"></a>
+                <a href="https://www.instagram.com/hotelvalledecerinza/" target="_blank" rel="noopener noreferrer"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram" class="social-icon"></a>
+                <a href="https://wa.me/573105986180" target="_blank" rel="noopener noreferrer"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" class="social-icon"></a>
+            </div>
+        </div>
+        <div class="footer-legal">
+            <p>&copy; 2026 Hotel Valle de Cerinza. Todos los derechos reservados.</p>
+        </div>
     </footer>
 </body>
 </html>
