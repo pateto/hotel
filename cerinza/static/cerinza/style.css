@@ -104,8 +104,8 @@ footer { background: #1D3A2A; margin-top: 0; }
 .footer-info { color: #A8C5B0; font-size: 0.95em; line-height: 1.9; }
 .footer-info strong { color: #F4EFE6; }
 .footer-social { display: flex; gap: 1em; margin-top: 0.5em; align-items: center; }
-.social-icon { width: 36px; height: 36px; filter: brightness(0) invert(0.8); transition: filter 0.2s, transform 0.2s; border-radius: 50%; }
-.social-icon:hover { filter: brightness(0) invert(1); transform: scale(1.15); }
+.social-icon { width: 36px; height: 36px; transition: opacity 0.2s, transform 0.2s; border-radius: 50%; opacity: 0.9; }
+.social-icon:hover { opacity: 1; transform: scale(1.15); }
 .footer-legal { text-align: center; color: #5A8A6A; font-size: 0.85em; padding: 1em 2em 1.5em 2em; border-top: 1px solid rgba(90,138,106,0.2); }
 .footer-legal a { color: #8DB89E; text-decoration: none; }
 .footer-legal a:hover { color: #A8C5B0; text-decoration: underline; }
