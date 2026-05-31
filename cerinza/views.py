@@ -8,6 +8,21 @@ def room_detail_en(request, room_name):
 		'room': room,
 		'images': images,
 		'rooms': rooms,
+		'spaces': SPACES,
+		'logo': os.path.join('media', 'logo.png'),
+	}
+	return render(request, 'cerinza/room_detail_en.html', context)
+def space_detail_en(request, space_name):
+	space = next((s for s in SPACES if s['slug'] == space_name), None)
+	if not space:
+		return render(request, 'cerinza/404.html', status=404)
+	images = get_room_images(space['media_folder'], space.get('photos'))
+	rooms = [{**r, 'images': []} for r in ROOMS]
+	context = {
+		'room': space,
+		'images': images,
+		'rooms': rooms,
+		'spaces': SPACES,
 		'logo': os.path.join('media', 'logo.png'),
 	}
 	return render(request, 'cerinza/room_detail_en.html', context)
@@ -16,8 +31,13 @@ def english(request):
 	for room in ROOMS:
 		images = get_room_images(room['media_folder'], room.get('photos'))
 		rooms.append({**room, 'images': images[:3]})
+	spaces = []
+	for space in SPACES:
+		images = get_room_images(space['media_folder'], space.get('photos'))
+		spaces.append({**space, 'images': images[:3]})
 	context = {
 		'rooms': rooms,
+		'spaces': spaces,
 		'logo': os.path.join('media', 'logo.png'),
 	}
 	return render(request, 'cerinza/english.html', context)
@@ -100,6 +120,33 @@ ROOMS = [
 	},
 ]
 
+SPACES = [
+	{
+		'name': 'Salón Boyacá',
+		'name_en': 'Salón Boyacá',
+		'slug': 'salon-boyaca',
+		'capacidad': 30,
+		'descripcion': 'Capacidad para 30 personas · Eventos',
+		'descripcion_en': 'Capacity for 30 people · Events',
+		'media_folder': 'salon_boyaca',
+		'photos': ['14.jpg', '11.jpg', '10.jpg', '1.jpg', '15.jpg', '12.jpg', '13.jpg'],
+		'detalle': 'El Salón Boyacá es un amplio espacio para eventos sociales y corporativos, con capacidad para hasta 30 personas. Ideal para reuniones, celebraciones, cumpleaños y eventos especiales en el corazón de Cerinza, Boyacá.',
+		'detalle_en': 'Salón Boyacá is a spacious venue for social and corporate events, with capacity for up to 30 people. Ideal for meetings, celebrations, birthdays, and special events in the heart of Cerinza, Boyacá.',
+	},
+	{
+		'name': 'Kiosko',
+		'name_en': 'Kiosko',
+		'slug': 'kiosko',
+		'capacidad': 20,
+		'descripcion': 'Capacidad para 20 personas · Eventos',
+		'descripcion_en': 'Capacity for 20 people · Events',
+		'media_folder': 'kiosko',
+		'photos': ['4.jpg', '2.jpg', '3.jpg', '1.jpg'],
+		'detalle': 'El Kiosko es un encantador espacio al aire libre con capacidad para 20 personas. Perfecto para reuniones informales, desayunos campestres y eventos al aire libre rodeados de la naturaleza boyacense.',
+		'detalle_en': 'The Kiosko is a charming outdoor space with capacity for 20 people. Perfect for informal gatherings, countryside breakfasts, and outdoor events surrounded by Boyacá nature.',
+	},
+]
+
 def get_room_images(folder, photos=None):
 	media_path = os.path.join(settings.MEDIA_ROOT, folder)
 	if not os.path.exists(media_path):
@@ -117,8 +164,13 @@ def home(request):
 	for room in ROOMS:
 		images = get_room_images(room['media_folder'], room.get('photos'))
 		rooms.append({**room, 'images': images[:3]})
+	spaces = []
+	for space in SPACES:
+		images = get_room_images(space['media_folder'], space.get('photos'))
+		spaces.append({**space, 'images': images[:3]})
 	context = {
 		'rooms': rooms,
+		'spaces': spaces,
 		'logo': os.path.join('media', 'logo.png'),
 	}
 	return render(request, 'cerinza/home.html', context)
@@ -133,6 +185,22 @@ def room_detail(request, room_name):
 		'room': room,
 		'images': images,
 		'rooms': rooms,
+		'spaces': SPACES,
+		'logo': os.path.join('media', 'logo.png'),
+	}
+	return render(request, 'cerinza/room_detail.html', context)
+
+def space_detail(request, space_name):
+	space = next((s for s in SPACES if s['slug'] == space_name), None)
+	if not space:
+		return render(request, 'cerinza/404.html', status=404)
+	images = get_room_images(space['media_folder'], space.get('photos'))
+	rooms = [{**r, 'images': []} for r in ROOMS]
+	context = {
+		'room': space,
+		'images': images,
+		'rooms': rooms,
+		'spaces': SPACES,
 		'logo': os.path.join('media', 'logo.png'),
 	}
 	return render(request, 'cerinza/room_detail.html', context)

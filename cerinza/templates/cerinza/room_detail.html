@@ -34,6 +34,16 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/#about">Sobre el hotel</a>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="espaciosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Espacios
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="espaciosDropdown">
+                            {% for s in spaces %}
+                            <li><a class="dropdown-item" href="/espacio/{{ s.slug }}/">{{ s.name }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/#activities">Actividades</a>
                     </li>

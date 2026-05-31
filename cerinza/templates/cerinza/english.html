@@ -34,6 +34,16 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#about">About</a>
                         </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="spacesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Spaces
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="spacesDropdown">
+                                {% for space in spaces %}
+                                <li><a class="dropdown-item" href="/english/space/{{ space.slug }}/">{{ space.name_en }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#activities">Activities</a>
                         </li>
@@ -68,6 +78,26 @@
             </div>
             <div class="about-img">
                 <img src="/media/laguna_del_alto/1.jpg" alt="Laguna del Alto" />
+            </div>
+        </div>
+    </section>
+    <section class="rooms" id="spaces" style="background:#F9F6F1;">
+        <div style="max-width:1200px;margin:0 auto;padding:3em 2em;">
+            <h2 style="text-align:center;color:#1D3A2A;font-family:'Playfair Display',Georgia,serif;font-size:2.2em;margin-bottom:0.4em;">Additional Spaces</h2>
+            <p style="text-align:center;color:#5A8A6A;font-size:1em;margin-bottom:2.2em;">Perfect for events, celebrations, and special gatherings</p>
+            <div class="room-list">
+                {% for space in spaces %}
+                <div class="room-card">
+                    {% if space.images %}
+                    <img src="/{{ space.images.0 }}" alt="{{ space.name_en }}" style="width:100%;height:200px;object-fit:cover;display:block;">
+                    {% endif %}
+                    <div class="room-info">
+                        <h3>{{ space.name_en }}</h3>
+                        <p>{{ space.descripcion_en }}</p>
+                        <a href="/english/space/{{ space.slug }}/" class="space-link">View space &rarr;</a>
+                    </div>
+                </div>
+                {% endfor %}
             </div>
         </div>
     </section>

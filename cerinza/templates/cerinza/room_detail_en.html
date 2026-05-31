@@ -34,6 +34,16 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/english/#about">About</a>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="spacesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Spaces
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="spacesDropdown">
+                            {% for s in spaces %}
+                            <li><a class="dropdown-item" href="/english/space/{{ s.slug }}/">{{ s.name_en }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/english/#activities">Activities</a>
                     </li>
