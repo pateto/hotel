@@ -165,7 +165,7 @@ SPACES = [
 		'descripcion': 'Capacidad para 20 personas · Eventos',
 		'descripcion_en': 'Capacity for 20 people · Events',
 		'media_folder': 'kiosko',
-		'photos': ['4.jpg', '2.jpg'],
+		'photos': ['4.jpg', '1.jpg'],
 		'detalle': 'El Kiosko es un encantador espacio al aire libre con capacidad para 20 personas. Perfecto para reuniones informales, desayunos campestres y eventos al aire libre rodeados de la naturaleza boyacense.',
 		'detalle_en': 'The Kiosko is a charming outdoor space with capacity for 20 people. Perfect for informal gatherings, countryside breakfasts, and outdoor events surrounded by Boyacá nature.',
 	},
