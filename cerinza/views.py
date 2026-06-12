@@ -91,8 +91,8 @@ ROOMS = [
 		'descripcion_en': '2 double beds',
 		'media_folder': 'el_tibet',
 		'photos': ['10.jpg', '11.jpg', '2.jpg', '4.jpeg', '1.jpeg'],
-		'detalle': 'La habitación El Tibet evoca la serenidad y belleza de la vereda homónima, un rincón de Cerinza donde el silencio y los paisajes verdes invitan al descanso. Es un espacio pensado para quienes buscan paz, meditación y contacto directo con la naturaleza.',
-		'detalle_en': "The El Tibet room evokes the serenity and beauty of the rural area of the same name, a corner of Cerinza where silence and green landscapes invite you to rest. It is a space designed for those seeking peace, meditation, and direct contact with nature."
+		'detalle': 'La habitación El Tibet evoca la serenidad y la belleza de montaña que lleva su nombre, un rincón de Cerinza donde el silencio y los paisajes verdes invitan al descanso. Es un espacio pensado para quienes buscan paz, meditación y contacto directo con la naturaleza.',
+		'detalle_en': "The El Tibet room evokes the serenity and beauty of the mountain of the same name, a corner of Cerinza where silence and green landscapes invite you to rest. It is a space designed for those seeking peace, meditation, and direct contact with nature."
 	},
 	{
 		'name': 'Martinez Peña',
